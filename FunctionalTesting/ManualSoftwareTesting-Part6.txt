@@ -1,0 +1,117 @@
+Test Design Techiniques:
+used to prepare data for testing
+1.data
+2.coverage
+
+with less data and more coverage
+
+we have 5 types of test design techiniques
+Equivalence Class partioning
+Boundary Value ANalysis
+Decision table based testing
+state transition
+error guessing
+
+===============================================================================================================
+Equivalence class partioning:
+partition data into various classes and can select data according to class then test . it reduce number of testcases and saves time for testing
+value check
+classify/divide /partition data
+
+enter  a number: textbox [allowa digits from 1-500]
+
+normal testdata			divide values into equivalence classes          Testdata using ECP
+1					-100 to 0 -> -50(Invalid)					-50
+2					1-100 ->30(valid)							30
+3					101-200-->160(valid)						160
+4					201-300---> 250(Valid) 						250
+.					301-400 --> 320(Valid)						320
+.					401-500 --> 450(Valid)						450
+.					501-600 -->550(Invalid)						550
+
+..
+.
+500
+
+textbox accepts only alphabets
+divide values into equivalence classes:
+								Testdata
+A...Z(Valid)						XYZ
+a...z(valid)						zxa
+SpecialCharacters->(Invalid)				@#$%
+Spaces->250(Inalvd)					Xy z
+Numbers ->320						1234
+===============================================================================================================
+
+Boundary Value Analysis:
+BVA is used to check boundaries of input , checks the boundary values
+
+enter age: textbox   [allows digit from 18-35]
+
+Min-1=17 min=18 min+1=18        max-1 =34   max=35  max+1=36
+
+
+input Domain Testing:
+The value will be verified in text box /input fields
+we use ECP and BVA techniques
+
+
+===============================================================================================================
+
+Decision Table:
+
+is also called cause - effect table
+this technique will be used if we have more conditions and corresponsing actions
+in decison table technique we deal with combinations of inputs
+to identify testcases with decision table , we consider conditions and actions
+
+Decision table example:
+Take an example of transferring money online to an account which is already added and approved
+
+here conditions to transer money are
+Account already approved
+OTP matched
+Sufficient money in account
+
+And actions perfromed are
+transfer money
+show a message as insuffuicient amount
+block transaction incase of suspicious transaction
+							TC1 		TC2 		TC3		TC4 		TC5
+
+condition1 : account already apprved     True		True		True		True		false
+consitin2:   OTP matched 			true		true		false		false		 X
+condition3:  sufficinet money in account  true        false		true		false		 X
+action1		transfer money		execute
+action2	show message insuffient amount		execute
+action3 block transaction incase of suspicious tran			execute	execute	X
+
+
+if we have more number of conditions /actions then we use decision table techinque
+===============================================================================================================
+
+State Tranisition:
+this technique chnages in input conditions chnage the state of application
+this testing technique allows tester to test behaviour of an AUT
+tester can perform this action by entering various input conditions in a sequence
+testing team provides positive as well as negative input test values for evaluating system behaviour
+
+take an example of login page of an application which locks user name after three wrong attempts of password
+
+STATE  login								corect pwd		incorrect pwd
+s1	 firstattempt							S4			S2
+s2 	 second attempt							S4			S3
+s3 	 third attempt							S4			S5
+s4 	 home page
+s5	 display message as "accont locked ,please consult administrator"
+
+===============================================================================================================
+
+Error Guessing:
+
+error guessing is one of testing techniques to find bugs in software application
+we dont have any specific rules
+it depends on tester analytical skills and experience
+some of examples are:
+submitting a form without entering values
+entering invalid values such as entering aplhabets in numeric fields
