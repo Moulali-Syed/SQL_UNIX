@@ -1,0 +1,135 @@
+Regression Testing: tests all impacted areas along with the module that got actually changed
+if we have 4 modules and developer fixed a bug and has made some change in one module , during this he might have add a new functionality ,or removed 
+whenever something chnaged in application we must ensure the application is working due to fix
+
+Testing conducted on modified build to make sure there will not be impact on existing functionality becuase of chnages like adding/deleting /modifying
+Unit regression testing: 
+testing only the changes / modifications done by developer
+Regional Regression testing:
+ testing modified module along with impacted modules , impact analysis meeting conducted to identify impacted modules with QA and Dev
+Full Regression testing : 
+Testing the main and remaining part of application
+dev has done changes in many modules instead f identifying impacted modules we perform one round of full regression
+
+================================================================================================================================
+ReTesting:
+bugs reported is fixed or not , we r retesting
+tester will close bug if worked otherwise reopen and send to developer
+to ensure that defects which were found and posted in earlier build were fixed or not in current build
+ex:build 1.0 releases .test team found some defects defect id 1.0.1,1.0.2 and posted
+build 1.1 released now testing defects 1.0.1, 1.0.2 in this build is retesting
+ 
+
+================================================================================================================================
+Retesting vs regression testing:
+an AUT has 3 modules named admin , purchase,finance
+finance depends on purchase
+if tester found bug in purchase module and posted once bug is fixed, needs to do retesting , also regression to test finance module which depeneds on
+purchase module
+
+================================================================================================================================
+Smoke and Sanity testing
+
+Smoke and Sanity come into picture after build release
+
+whenever build is released we look for installations are correct or not , build is stable or not , when application is opened then the pages in app 
+are navigating are not - Smoke Testing , conducted on initial builds , will be done by dev and testers
+
+Sanity once build is stable we can perform sanity , always done by testers
+
+
+Smoke Testing:
+is done to make sure the build we received from dev team is stable or not
+done by dev and testers
+build may be either stable or unstable
+done on intial builds
+part of basic testing
+usually it is done every time there is a new build release
+
+Sanity Testing:
+done during release phase to check for main functinalities of application without going deeper
+perforemd by testers
+build is relatively stable
+done on stable builds
+part of regression testing
+it is planned when there is no enough time to do in depth testing
+
+================================================================================================================================
+Exploratory Testing:
+we have to explore the application , understand completely and test it
+understand the application , identify all possible scenarios , document it then use it for testing
+we do exploratory testing when application ready but there is no requirement
+Test engineer will do exploratory testing when there is no requirement
+Drawbacks:
+you might misunderstand bug as functinality or functinality as bug
+Time consuming
+if there is any bug in application, you will never know about it
+
+================================================================================================================================
+
+Adhoc Testing:
+testing application randomly without any testcases or any business req documnet
+adhoc testing is an informal testing type with an aim to break the system
+tester should have knowledge of application even thou he doesnot have requiremnets / testcases
+this testing is usually an unplanned activity
+No documentation | No Test Design | No Test Case
+
+================================================================================================================================
+Monkey/Gorilla Testing:
+testing application randomly without any testcases or business requirements
+tester donot have knowledge of application
+suitable for gaming applications
+================================================================================================================================
+Adhoc vs Monkey vs Exploratory
+
+Adhoc				Monkey					Exploratory
+No Doc  			NoDoc						NoDOC
+No plan			No Plan					NoPlan
+InformalTesting		InformalTesting				InformalTesting
+tester must know app	tester dont know app functionality  tester dont knwo app functionality
+functinality		
+random testing		random testing				random testing
+intension is to break	intension is to break			intension is to learn or explore functionality
+or find out corner	or find corner defects
+defects
+Any applications		Gaming Applications			Any application new to tester
+
+
+================================================================================================================================
+Positive Testing:
+testing application with valid inputs is called positive testing
+it checks whether application behaves as expected with positive inputs
+for example: textbox enter only numbers  that accepts numbers only
+
+
+
+================================================================================================================================
+Negative Testing:
+testing application with invalid inputs is called positive testing
+it checks whether application behaves as expected with negative inputs
+for example: textbox enter alphabets,specialSymbols  that accepts numbers only
+
+
+================================================================================================================================
+positive negative testcases
+requirement: textbox accepts characters and only alphabets of length 6-20
+positive tcs : accpet 6 chars , 20 chars,in between 6-20 chars, all alphabets
+negative tcs: lessthan 6 chars,morethan 20chars,special chars,numerical values
+
+================================================================================================================================
+end to end testing:
+testing overall functionalities of system including the data integration among all modules is called end to end testing
+login--add new customer-- edit customer -- delete customer -- logout
+
+================================================================================================================================
+globalization testing
+
+supports globally , all languages
+different currency format , mobile number , address formats
+facebook is globalised product
+================================================================================================================================
+
+localization testing
+supports specific location and their language
+specific currency,mobile number ,address formats
+baidu.com supports only chinese language , it is a localized product
