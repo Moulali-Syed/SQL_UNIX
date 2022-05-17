@@ -1,0 +1,134 @@
+SDLC - Software Developement Life Cycle
+SDLC is a process used by software industry to design , develop and test softwares
+
+P-People
+P-Process
+P-Product
+
+SDLC : 
+	Requiremnet Analysis - collect / understand req's from customer
+		Design - Designers will design the software
+			Development - Write code
+				Testing - test software
+					Maintenance - deliver and maintain software
+======================================================================================================================================================
+Waterfall Model:
+		requirement Analysis --> SystemDesign --> Implementaion --> Testing --> Deployement --> Maintainence
+
+requirement Analysis - talk to client document as much as possible and create Customer requirement specification(CRS)
+Design - create a low level and high level design[design documents , SRS will be created]
+Implementation - code[coding will be done]
+Testing - test software[test plan ]
+Deployemnt - 
+Maintenance - move the software to customer environment and maintain
+
+Every phase depends on previous phase
+Advantages:
+Quality of product will be good
+Since requirement changes are not allowed , chances of finding bugs is less
+initial investment is less since testers are hired at later stages
+preferred for small projects where requirements are freezed
+Disadvantages:
+Requirement changes are not allowed
+If there is defect in requirement , it will be continued to next phases
+total investment is more because time taking if any defect is found all other teams have to rework
+Testing is done after coding , not involved from starting
+
+======================================================================================================================================================
+Spiral Model: - Iterative Model
+
+Planning --> RiskAnalysis --> Engineering and execution --> evaluation
+
+in a cycle we have requirement analysis --> create  a prototype --> deve and Test --> customer evaluation
+this process is continued in form of spiral 
+we keep on implementing like a spiral , one top of the other
+
+we can have changing requirements , espically suitable for product based companies
+in every cycle we release new module
+
+SPiral model is iterative model/version control model
+spiral model overcomes drawback of water fall mmodel , that is we can have changing requirements
+we follow spiral model when ever there is dependency on modules
+in every cycle new software will be released to customer
+software will be released  in multiple versions . so it is also called version control method
+
+Advantages:
+Testing is done in every cycle , before going to next cycle
+customer will get to use software for every module
+requirement changes are allowed after every cycle before going to next cycle . i.e after completing the current cycle not in between cycle
+
+Disadvantages:
+requirement chnages not allowed in middle of cycle
+every cycle of spiral model looks like water fall model
+there is no testing in requirement and design phase
+
+======================================================================================================================================================
+ProtoType model: is like more customer centric
+blue print of software - prototype
+we get initial req's from customer --> create a prototype --> show to customer --> then we design, coding , test
+
+gmail: login | inbox | compose | sent | receive mail 
+all these are modules , a piece of software , different devs will work
+
+Banking: login , check balance , fund transfer, req statement , add payee , etc...  are different modules
+
+======================================================================================================================================================
+V- Model | verfication , validation model
+
+In every phase of SDLC , we do testing
+ 
+					verification 							validation
+businessAnalyst		   [BRS/CRS/URS]						User Acceptance testing 	
+
+projectManager				SRS					System testing
+
+Designer     					HLD
+					 		 |			Integration testing
+							LLD 
+
+								Coding -- Unit Testing
+
+verification / validation:
+
+verification: we use static testing
+verfication checks whether we are building the right product
+Focus on documentation
+Verfication typically involves
+reviews
+Walkthrough
+Inspections
+
+Validation : once software is ready we test actual software
+validation checks whether we are building the product right
+Focus on software
+dynamic testing - testing actual software 
+( unit testing,integration testing)whitebox , (system testing , user acceptance testing)blackbox
+
+Advantages:
+Testing involved in all phases
+
+Disadavtages:
+More documentation
+Initial investment is more
+======================================================================================================================================================
+BRS- business req specification , crs - customer R S , URS - user R S
+
+
+Then create SRS - Software req specification
+
+HLD - main modules
+LLD - detailed modules
+
+
+Review 
+WalkThrough
+Inspection
+by using these 3 techniques we test the documents - this is called static testing[testing project related documents]
+
+
+Dynamic testing - testing actual software -( unit testing,integration testing)whitebox , (system testing , user acceptance testing)blackbox
+testing on code - white box testing , done by developers 
+whitebox testing - unit testing , integration testing
+
+system testing - done by testers , comes under blackbox testing
+blackbox testing - system testing testing
