@@ -122,7 +122,7 @@ testing overall functionalities of system including the data integration among a
 login--add new customer-- edit customer -- delete customer -- logout
 
 ================================================================================================================================
-globalization testing
+globalization testing/Internationalization Testing
 
 supports globally , all languages
 different currency format , mobile number , address formats
