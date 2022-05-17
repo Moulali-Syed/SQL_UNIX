@@ -1,0 +1,134 @@
+Read document clearly and write test cases
+
+System Testing: our key focus is on below 4 categories
+GUI Testing
+Usability Testing
+Functional Testing
+NonFunctional testing
+=======================================================================================================
+GUI Testing:
+is process of testing user interface of an application
+A GUI includes all elements such as menus , checkbox,buttons, colors , fonts , sizes, icons , content and images
+
+GUI testing checklist
+The communication between UI and database working fine or not
+testing size position , width , height of elements
+testing error messages that are getting displayed
+testing different sections on screen
+testing font whether it is readable or not
+testing screen in different resolution with help of zooimg in and zoomin out
+testing alignments of text , other elements like icons , buttons etc are in proper place or not
+testing colors of fonts
+testing whether image has good clarity or not
+testing alignment of images
+testing the spelling
+the user must not get frustrated while using system interface
+testing whether interface is attractive or not
+testing scrollbars according to size of page if any
+testing disabled fields if any
+testing size of images
+testing headings whether it is properly aligned or not
+testing color if hyperlink
+testing UI elements like button,textbox , textarea , checkbox , radio button, drop downs , links etc.
+
+=======================================================================================================
+Usability testing:
+during this testing validates application provided context sensitive help or not to user
+checks how easily the end users are able to understand and operate the application is called usability testing
+
+=======================================================================================================
+Functional testing : main focus in system testing , focus on requirements of customer
+Functionality is behaviour of application
+talks about how your feature should work
+	Object properties testing , database testing , error handling, calculations/Manipulation testing , links existence and links execution , cookies and sessions
+
+Object properties testing:
+Every element on UI must have some properties 
+like a textbox - enable /disable
+	radio button - 
+	drop down - select one element
+	combo boxes - select multiple elements
+	focus - once we write in textbox and press enter focus going to next input element
+
+Database/end end testing: grey box testing , table level validations (columnType , columnLength,NumberOfColumns,relation Between Tables, Triggers, Indexes,Views , etc..)
+check DML - Data manipulation langauge
+insert, update, delete,select
+
+sending data from UI checking in db - grey box testing
+
+Error Handling:
+when incorect actions are done , error messages must be proper and readable ,simple and understandable
+Incorrect data
+Incorrect user(more specific)
+
+Calculations/Manipulation Testing:
+check calculations with valid and invalid data
+
+links:
+where exactly links are placed - links are navigating to proper page or not
+we have internal links , external links , broken links
+
+Cookies
+temporary files created by browser while browsing pages through internet
+
+Sessions:
+time slots created by server . session will be expired after sometime(if you are idle for sometime)
+=======================================================================================================
+Non Functional Testing: focus on expectation of customer
+once application functionality is stable then we do
+focus on performance , load it can take and security etc
+
+Performance testing: speed of application , how well app responds to many users
+	Load testing
+	Stress testing
+	Volume testing
+
+		load testing: lets say we have server , we slowly increase number of users and check the application speed - JMeter ,LoadRunner
+		Stress testing: we suddenly increase or decrease load on application
+		Volume Testing: how much data application can handle
+
+Security Testing:
+how secure our application , 
+Authentication -- users are valid or not
+Authorization/Access COntrol  -- only has access to some functionality , permissions of valid user
+
+Recovery testing:
+check the system change from abnormal to normal
+
+Compatibility Testing:
+forward compatiablity 
+backward compatiblity
+Hardware compatibility(configuration testing)
+
+Installation Testing:
+Check screens are clear to understand
+Screens Navigation
+simple or not
+Uninstallation
+
+Sanitation/Garbage Testing:
+If any application provides extra features / functinality the we can consider them as bug
+
+=======================================================================================================
+
+differences between Functional and Non Functional Testing:
+Functional TEsting
+
+validates functinality of software
+functionality describes what software does
+concentrates on user requirement
+functional testing takes place before non functional testing
+
+
+NonFunctional testing
+verify the performance security reliablity of software
+non functionality describes how software works
+concentrates on user expectation
+non functional testing performed after finishing functional testing
+		
+
+
+
+
+
+
