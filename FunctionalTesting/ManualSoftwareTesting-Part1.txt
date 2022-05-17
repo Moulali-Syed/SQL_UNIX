@@ -1,0 +1,52 @@
+Software Testing Concepts:What to test
+Testing Project (How) to test
+Agile Process
+
+What is Software?
+Software is a collection of computer programs that helps to perform a task
+
+Types of Software:
+System software
+		device drivers , OS , servers , utilities ,.. etc
+Programming Software
+		compilers  , debuggers , interpreters , .. etc
+Application software
+		web applications, mobile apps,desktop applications, .. etc
+
+system , programming are internal , but application software is used by us , testing is also focused on application software
+
+A bank approaches IT company and gives requirement and tell there budget , once IT company agreed for this they will --> develop -->test-->deliver-->end product sent to bank
+Software testing is must to deliver a QUALITY PRODUCT
+Testing is part of development process
+
+What is Software Testing and why do we need?
+Software Testing is a part of software development process
+Software testing is an activity to detect and identify defects in software
+the objective of testing is to release quality product to client
+
+Software Quality:
+BugFree
+Delivered on Time
+Within budget
+meets requirements and/or expectations
+Maintainable
+
+
+Project vs Product:
+If software application is developed for specific customer based on the requirement then it is called project , they work for specific clients - service based companies
+If software application is developed for multiple customers based on market requirements then it is called Product , google ,Microsoft , Oracle - Product based companies
+
+
+Error , Bug/defect and Failure:
+Error: Incorrect Human action
+Bug: It is a deviation from actual behaviour , suppose if data is valid and able to login , if data invalid must not able to login ,if this doesnot happen then it is BUG/Defect
+Failure:This will be seen in Production environment , customer usage
+
+
+Why software has bugs?
+Miscommunication or no communication
+Software Complexity
+Programming errors
+Changing Requirements
+Lack of skilled testers
+
