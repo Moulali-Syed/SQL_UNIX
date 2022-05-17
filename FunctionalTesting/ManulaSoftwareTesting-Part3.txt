@@ -1,0 +1,104 @@
+Static Testing Techniques:
+1.Review
+		Read entire documents  thus ensure correctness and completeness , can be written by anyone
+		we have requirement reviews , design reviews , code reviews , test plan reviews , test cases review , defect review .. etc
+2.Walkthrough
+		It is informal review
+		author reads document or code and discuss with peers
+		its not preplanned can be done when ever required
+		also wlakthrough doesnot have minutes of meet
+
+3.Inspection
+
+		It is most formal review type
+		in which at least 3-8 people will sit in meeting 1.reader , 2.writer[writes if any questions raised] , 3.moderator[organizer] plus concerned
+		Inspection will have proper schedule which will be intimated via email to concerned developer/tester
+Static testing is testing the documents using above 3 ways
+===============================================================================================================================================================
+Dynamic Testing Techniques:
+Unit testing        - code is available done by developers
+Integration testing - code is available done by developers
+System testing  -  done by testers to check the functionality of application
+User acceptance testing
+===============================================================================================================================================================
+
+QA - quality assurance  vs QC - quality control
+
+QA is process related , in a company we have people,process,product
+ensure and define that all follow the qality techniques , QA involved in entire software develeopment life cycle
+QA focus on building quality product
+QA is for preventing defects
+QA - is process oriented
+QA for entire life cycle
+
+QC - actual testing of software [Testers]
+QC focuses on testing for quality
+QC is detecting defects
+QC is product oriented
+QC for testing part in SDLC
+
+QE - Quality Engineering , writes code to test the software - automation testers will be QE
+SE - write code to create software
+
+===============================================================================================================================================================
+Levels of Software testing:
+Unit Testing  -  test the code 
+Integration Testing - combining multiple units and check the flow
+System testing - test over all functinality of application , thus matching with requirements or not
+User Acceptance testing(UAT)  - testers along with users do them
+
+Unit Testing:
+As soon as coding started developer will do unit testing
+A unit is a single component or module of a software
+unit testing conducts on a single program or single module
+unit testing is white box testing technique conducted by developers
+Unit testing Techniques:
+Basis path testing  - each and every line of code is covered and tested
+control structure testing - 
+	a=10 b=20
+	if(a>b)
+		print a is large
+	else
+		b is large
+conditional coverage
+loops coverage
+mutation testing
+
+===============================================================================================================================================================
+Integration testing:
+performed between 2 or more modules
+focuses on checking data communication between multiple modules
+Integration testing is white box testing
+
+Types of Integration testing:
+1.incremental integration testing: incrementally adding modules and check the data flow between modules
+  we have two approaches , top down and bottom up
+  Top Down - Incremental Integration testing
+	parent to child , like compose --> sent items
+	incrementally adding modules and check the data flow between modules , ensure the module added is child of previous module
+  Bottom up - incrementally adding modules and check the data flow between modules , ensure module added is parent of previous module
+      child - parent , like sentItems --> compose
+   Sandwich/Hybrid approach - combination of top down and bottom up
+
+2.Non Incremental Integration Testing
+   adding all modules in a single shot and test data flow between modules
+	drawbacks: we might miss data flow between some of modules
+			if u find defect we cant understand root cause of defect
+
+===============================================================================================================================================================
+System testing:
+Testing over all functionality of application with respect to client requirements
+It is black box testing
+this is conducted by testing team
+after completion of component and integration level testing we start system testing
+before conducting system testing  we should know customer requirements
+System Testing focuses on below aspects
+User interface testing (GUI)
+functional testing
+non functional testing
+usability testing
+===============================================================================================================================================================
+User Acceptance testing
+UAT team conducts testing in two levels
+Alpha testing
+Beta Testing
