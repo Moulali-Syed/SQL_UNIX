@@ -1,0 +1,336 @@
+Set Opertaors:
+UNION 
+UNION ALL
+INTERSECT
+MINUS
+
+
+if we have 2 tables with table1 data  1 3 5 , table2 data 3 5 6
+
+union will give 1 3 5 6
+UNION ALL will give 1 3 3 5 5 6
+
+INTERSECT - common part 3 5
+MINUS - T1-T2 = 1 
+T2-T1 = 6
+
+UNION and UNION ALL
+the union opertor is used to combine the result set of two or more select statements
+each select statement within union must have the same number of columns
+the columns must also have similar datatypes
+the columns in each select statement must also be in same order
+
+-- UNION , UNION ALL
+
+select * from A;
+Select * from B;
+-- avoid duplicates
+select num from A union select num from B;
+-- combine two tables together
+select num from A union all select num from B;
+=============================================================================================================================
+SQL joins 
+joins helps retriving data from two or more database tables
+the tables are mutually related using primary and foreign keys
+
+Types of joins:
+Equi Join/Inner Join / Simple Join
+Right Join
+Left Join
+Full Join
+Self Join
+
+inner join will return common data from two tables
+select * from tab1 inner join tab2 on tab1.numid = tab2.numid;
+
+Left outer join:
+gives data that is present in left table 
+select * from tab1 left join tab2 on tab1.numid = tab2.numid;
+
+
+Right outer join:
+gives data that is present in right table
+select * from tab1 right join tab2 on tab1.numid = tab2.numid;
+
+full join: not supported in mysql
+gives all the data from the tables
+select * from tab1 full join tab2 on tab1.numid = tab2.numid; 
+
+Select * from tab1 inner join tab2 on tab1.numid=tab2.numid;
+
+select * from tab1 left join tab2 on tab1.numid = tab2.numid;
+
+select * from tab1 right join tab2 on tab1.numid = tab2.numid;
+
+Select * from employees Inner join departments on employees.department_id = departments.department_id;
+
+Select * from employees Inner join departments on employees.department_id <> departments.department_id;
+
+-- inner join
+Select first_name,salary,departments.department_id from employees Inner join departments on employees.department_id = departments.department_id;
+
+Select first_name,salary,departments.department_id from employees left join departments on employees.department_id = departments.department_id;
+
+select * from departments;
+
+
+self join:
+join table with same table
+select e.employee_id,m.manager_id,e.first_name from employees e , employees m where e.employee_id=m.manager_id;
+
+=============================================================================================================================
+Sub queries:
+subquery is a query with in a query
+
+sub query contains 2 parts
+outer query
+inner query
+
+The output of inner query is become input of outer query
+2 types of sub queries
+1. single row sub query  , <= ,>= ,!=
+2.Multi row sub query . IN ,ANY , ALL
+
+
+select salary from employees where first_name = "ellen";
+select salary from employees where salary<11000;
+select salary from employees where salary<(select salary from employees where first_name = "ellen");
+
+-- 2nd maximum salary
+select max(salary) from employees;
+select max(salary) from employees where salary<(select max(salary) from employees);
+
+-- 3rd maximum salary
+select max(salary) from employees where salary < (select max(salary) from employees where salary<(select max(salary) from employees));
+
+-- single row subqueries
+-- find salary of employee whose salary is greater than the salary of employee whose employee_id 150
+select salary from employees where salary>(select salary from employees where employee_id=150);
+
+-- display the employees who all are earning highest salary
+select * from employees where salary=(select max(salary) from employees);
+
+
+-- multi row subqueries
+-- display  employees whose salary is equal to salary of the at least one employee in department id 30
+select * from employees where salary in (select salary from employees where department_id=30);
+
+-- display  employees whose salary is less than salary of the at least one employee in department id 30
+select * from employees where salary < ANY (select salary from employees where department_id=30);
+
+-- display  employees whose salary is greater than salary of the at least one employee in department id 30
+select * from employees where salary > ANY (select salary from employees where department_id=30);
+
+
+-- display  employees whose salary is greater than all salary of the at least one employee in department id 30
+select * from employees where salary > ALL (select salary from employees where department_id=30);
+
+-- query to get department name of employee
+
+select first_name,employee_id,department_id,
+(select department_name from departments where employees.department_id=departments.department_id) DNAME
+from employees;
+
+
+-- list out the employees who are having salary less than maximum salary and also having hire date greater than hire date of an employee
+-- who is having maximum salary
+select employee_id,first_name,salary,hire_date from employees where salary<
+	(select max(salary) from employees) and hire_date>
+		(select hire_date from employees where salary = (select max(salary) from employees));
+
+
+=============================================================================================================================
+Integrity Constraints:
+
+if in a column we want to allow only specific city , or a number in specific range
+
+SQL constraints are used to specify rules for data in table
+constraints can be specified when table is created with create table statment or after the table is created with alter table statement
+
+SQL Constraints:
+NOT NULL - ensures that a column cannot have a NULL value
+UNIQUE - ensures that all values in a column are different
+PRIMARY KEY - a combination of a NOTNULL and UNIQUE , uniquely identifies each row in a table
+FOREIGN KEY - uniqely idnetifies a row/record in another table
+CHECK - ensures that all values in a column satisfies a specific condition
+DEFAULT - sets a default value for a column when no value is specified
+
+=============================================================================================================================
+NOT NULL : this constraint will not accept NULL values into column ,
+you can apply not null constraint on any number of columns
+
+create table student1(sno int(3) NOT NULL , sname varchar(10), marks int(3));
+
+insert into student1 values(101,'arun',50);//correct
+insert into student1 values(NULL,'kira',70);//error
+
+=============================================================================================================================
+UNIQUE : this constraint will not accept duplicate values
+this constraint can apply on both column and table level
+column level:
+create table student1(sno int(3) UNIQUE,sname varchar(10),marks int(3));
+Table level:
+create table student1(sno int(3),sname varchar(10),marks int(3), unique(sno,sname,marks));
+
+unique will allow any number of null as values , but not allow duplicate values
+=============================================================================================================================
+PRIMARY KEY : UNIQUE + NOT NULL[can be applied to only one key]
+
+create table student1 (sno int(3) primary key , sname varchar(10) , marks int(3));
+
+=============================================================================================================================
+
+Composite key: created only at table level
+apply primary key on 2 columns is composite key
+
+create table student1 (sno int(3) , class int(3) , sname varchar(10) , marks int(3) , primary key(sno , class));
+=============================================================================================================================
+Foreign Key:
+
+is used to link two tables together
+A foreign key is a field in one table that refers to primary key in another table
+the table containing the foreign key is called child table and table containing candidate key is called reference table or parent table
+
+
+-- foreign key
+create table school(
+sno int(3),
+sname varchar(15),
+marks int(3),
+primary key(sno));
+
+insert into school values(101,'arun',90);
+insert into school values(102,'Tarun',70);
+insert into school values(103,'arul',80);
+
+select * from school;
+create table library
+(sno int(3) , foreign key (sno) references school(sno),
+book_name varchar(10));
+
+insert into library values(102,'java');
+select * from library;
+insert into library values(102,'java'); -- error because 108 is not there in parent table
+insert into library value(null,'dot net'); -- null is allowed
+
+remove from child and then we can remove from parent
+
+when you insert record into child table , the column will be referred in parent table
+if you try remove parent table record directly without deleting records from child table --> Not allowed
+first delete dependent record from child table , then delete record from parent table
+=============================================================================================================================
+ONDELETE CASCADE:
+this will delete parent  records , and also deletes child table records simultaneously
+SQL Tutorial 10
+
+=============================================================================================================================
+check constraint: restrict data 
+
+create table student(
+sno int(5),
+sname varchar(15),
+marks int(5) check(marks between 50 and 100));
+
+insert into student values(101,'amith',69); -- valid
+
+create table location(
+city varchar(15) check(city in ('HYDERABAD','DELHI','CHENNAI')),
+country varchar(15),
+pin int(8));
+
+insert table location values('delhi','india',1233211);
+=============================================================================================================================
+
+Default constraint
+is used to provide default value
+
+create table orders (
+ID int(5),
+OrderNumber int(5),
+OrderDate datetime DEFAULT now());
+
+insert into orders values(101,12342,'2019-05-21 15:25:10');
+
+insert into orders (ID,OrderNumber) values(102,183747848);  // as default used automatically it will get updated
+
+=============================================================================================================================
+
+AUTO INCREMENT: is a function that operates on numeric datatypes ,it automatically generates sequential numeric values everytime that a record 
+is inserted into a table for a field defined as auto increment
+
+auto_increment must be used along with primary key only
+
+
+create table Student
+(sno INT(5) primary key AUTO_INCREMENT,
+sname varchar(15),
+marks int(5));
+
+insert into student (sname,marks) values('X',60);
+insert into student (sname,marks) values('Y',66);
+
+we can some number from where it must start
+alter table student AUTO_INCREMENT =100;
+=============================================================================================================================
+LIMIT
+
+select * from employees limit 5;
+
+only 5 rows will be shown now 
+=============================================================================================================================
+
+Views: i created a table and someone wnat to use my tables , then i will create some view to provide access to him
+i will know what columns does he need and create a select query and create a view and provide some access to it
+view - is a logical object not physical , can be created from different tables also
+we use view for security purposes
+A view is a virtual table based on result set of an sql statement
+A view contains rows and columns , just like real table .the fields in a view are fields from one or more real tables in database
+you can add all sql functions,where and join statements to a view and present the data as if data were coming from a single table
+
+example:
+select * from employees
+creaing a view:
+
+Create view employees_v1 as select employee_id,first_name,salary from employees;
+select * from employees_v1;
+
+dropping a view:
+drop view employees_v1;
+
+
+
+
+=============================================================================================================================
+Index:
+indexes are used to retrieve data from database very fast
+the users cannot see indexes they are just used to speedup searches/queries
+
+creating index:
+create index idx_employees on employees(first_name);
+
+dropping index:
+drop index idx_employees on Employees;
+
+
+=============================================================================================================================
+TCL - Commit and Rollback
+
+after insert update delete , we must do commit , but in mysql auto-commit is enabled by default
+COMMIT;
+
+rollback - i have table , inside i have records , i have done insertion , updated and deleted some records , auto-commit is not enabled
+ so if i want the tables as it is there previosuly before making the insert,update,delete then i can use 
+rollback;
+
+in mysql :
+to disable autocommit
+set autocommit=1;
+
+now after chnages we must do
+COMMIT ; 
+and execute the commit to make changes permanent
+
+if i havenot done commit and iwant to remove chnages i made then use rollback
+rollback;
+
+=============================================================================================================================
