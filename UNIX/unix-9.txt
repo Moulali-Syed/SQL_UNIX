@@ -1,0 +1,49 @@
+Regular expressions:
+
+1.list all files in current dir
+	ls *
+2.list all files with some extension
+	ls *.*
+3.list all .txt files
+	ls *.txt
+4.list out only .java files
+	ls *.java
+5.list out all files starts with 'a'
+	ls a*
+6.list files start with 't' and ends with 's'
+	ls t*s
+7.list all files with filename contains only 2 characters
+	ls ??
+8.list out all files where filename contains only 2 chars and first character should be 'x'
+	ls x?
+9.list out all files where filename has 3 chars
+	ls ???
+10.filename 5 chars
+	ls ?????
+11.list all files filename contains atleast 3 chars, means 3 chars are must after that we can have any number of characters
+	ls ???*
+12.list out files where filename starts with s or t or r
+	ls [str]*
+13.list filenames where filenames shhouldnot start with s or t or r
+	ls [!str]*
+14.list all files name start with lower case alphabets
+	ls [a-z]*    or  ls [[:lower:]]*
+
+15.list all files name start with upper case alphabets
+	ls [A-Z]*  or ls [[:upper:]]
+16.list all files name start with digit
+	ls [0-9]*   or ls [[:digit:]]*
+17.list out all files where 1st letter should be upper case, 2nd letter should be digit , 3rd letter should be lower case
+	ls [A-Z][0-9][a-z]*
+18.list all files start with special symbol
+	  ls [![:alnum:]]*
+19.list all files with .py or .java  extension
+	ls {*.java,*.py}
+20.copy all files starts with digit to other directory
+	ls [0-9]*
+	mkdir mydir
+	cp [0-9]* mydir
+	cd mydir
+	ls
+
+20 move all files starts with alphabet and with .txt extension to dir2 directory
