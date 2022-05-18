@@ -1,0 +1,53 @@
+misc commands:
+
+1.head
+	content of file is verylarge , then if we use cat then its hard to see all the content once
+
+	head displays specific number of lines from top
+	head cities.txt [by default gives first 10 lines]
+
+	head -n 5 cities.txt[displays first 5 lines]
+
+	head -n 20 cities.txt[displays first 20 lines]
+
+2.tail
+	tail cities.txt[displays last 10 lines of file by default]
+
+	tail -n 20 cities.txt[last 20 lines will be displayed]
+	
+	tail -20 cities.txt
+
+3.|-->[pipe]	
+	get lines 10 to 15 using head and tail - we use pipe symbol
+	head -15 cities.txt | tail -6 
+
+	get 20 to 30 lines
+	head -30 cities.txt | tail -11
+
+
+	
+4.head , tail with ls
+
+	ls -l | head [displays top 10 files]
+
+	ls -l | head -3[displays top 3 files]
+
+	ls -l | tail [last 10 files will be displayed]
+
+	ls -l | tail -3[last 3 files will be displayed]
+
+5.more
+
+	more cities.txt[displays files that fits screen size and if we wnat to see next lines press space bar - displays content page by page]
+
+	more cities.txt [displays files that fits screen size , press enter to see line by line content]
+
+6.less
+
+	less cities.txt [by using less we can go back using - arrow keys , next page by space]
+
+ls -l | more
+ls -l | less
+	
+
+	
