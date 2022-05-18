@@ -1,0 +1,60 @@
+misc commands:
+
+1.wc
+
+	wc fileName
+	[displays NumberOfLines Words CharacterCount fileName]
+	
+	wc fileName1 fileName2
+	[NumberOfLines Words CharacterCount fileName
+	 NumberOfLines Words CharacterCount fileName
+	 NumberOfLinesof2Files Wordsin2Files CharacterCount2files total
+	]
+
+	wc -l file1[lines fileName]
+
+	wc -w file1[words fileName]
+
+	wc -c file1[characters fileName]
+
+	wc -lw file1
+	wc -wc file1
+	wc -lc file1
+
+2.sort
+
+	sort fileName
+	[displays content of file in alphabetical order]
+
+	store sorted data in a new file
+	sort numbers.txt >numbers_sorted.txt
+
+	sort file1 file2
+	sort two files
+
+	sort file1 file2 >file3 [store sorted data to new file]
+
+	sort -r numbers.txt [reverse order]
+
+	sort -r numbers.txt>numbers_desc.txt[store in a new file]
+
+3.uniq
+
+	get unique or duplicate lines of file , prerequsite is data should be in sorted order
+	sort cities>cities_new
+
+	display data without duplicates from cities_new
+	uniq cities_new
+
+	uniq -d cities_new [displays duplicate lines of file ]
+
+	uniq -u cities_new [displays unique lines of file]
+
+	uniq -c cities_new
+
+
+
+	
+
+
+
