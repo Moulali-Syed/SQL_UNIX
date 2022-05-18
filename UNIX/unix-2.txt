@@ -1,0 +1,62 @@
+misc commands:
+
+1.touch
+	create a file
+	touch myfile.doc
+	
+	create a hidden file
+	touch .myhiddenfile.doc
+	
+	to see hidden files
+	ls -a
+
+2.pwd
+	show present working directory
+
+	pwd
+
+3.ls
+
+	list all files in dir
+	ls
+
+	list all files with all details
+	ls -l [long listing file]
+	
+	ls -a[display all files along with hidden files]
+
+	ls -l -a [detailed info of all files including hidden files]
+
+	ls -F[adds a / after every directory , thus we can recognize dir and files]
+
+	ls -r[display files in reverse order]
+
+	ls -R[displays directories along with the sub directories]
+
+	ls -lS [-l long list -S shows size]
+
+	ls -l directoryName
+
+
+
+? - single character
+* - multiple
+[] - range
+
+	ls ?.* [file names with single character , but extension can be anything]
+
+	ls ?.doc[file name with single character , and with extension doc]
+
+	ls ?.txt[file name with single character , and with extension txt]
+
+	ls a*.doc[file name starts with a , and can have any number of characters , but extension is doc]
+
+	ls *.txt[file name can be anything , but extension is txt]
+	
+	ls *.doc[file name can be anything, but extension is doc]
+
+	ls [a-z]*.* [file name must fall between a to z , extension can be anything ]
+	
+	ls [a-c]*.* [file name can contain a b c, extension can be anything]
+
+	
