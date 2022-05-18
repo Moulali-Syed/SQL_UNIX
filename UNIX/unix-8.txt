@@ -1,0 +1,30 @@
+Piping:
+we can pass output of one command as input for next command is called piping
+
+using piping multiple commands work together
+we can use piping using vertical bar(|)
+
+command1 --> output --> command2 --> final output
+
+ls -l /etc | wc -l [gives number of lines]
+
+ls -l /etc | more
+
+ls -l /etc | head -5 
+
+ls -l /etc > output.txt | wc
+
+
+in middle of piping if we use redirection then it breaks piping
+
+
+tee: output of first command is saved in output.txt and the same is passed to next
+ls -l /etc | tee output.txt | wc
+
+
+
+tests.txt contains filenames .read file names from tests.txt and remove each file
+
+
+output of first command converted into arguments for second command using xarfs
+cat tests.txt | xargs rm
