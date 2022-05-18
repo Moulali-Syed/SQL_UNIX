@@ -1,0 +1,60 @@
+misc commands:
+1.who
+
+
+2.whoami
+
+	 current user
+
+3.hostname
+	gives host
+
+4.hostname -i
+	gives ip address
+
+5.uptime
+	session start time
+
+
+6.cal 
+	cal[gives current month calendar]
+	cal 2022[give year calendar]
+	cal 3 2022[gives march calendar]
+	cal -3[displays prev present next months]
+	cal -y
+	cal -m10[specific month in present year]
+	
+7.date
+	date[this command gives - day month date time year]
+	
+	date "+%Y"  - 2022
+
+	date "+%m"  - [present month]
+
+	date "+%d" - [present date]
+
+	date "+%d-%m-%Y" - [date-month-year]
+
+	date "+%d/%m/%y"  - [date/month/year]
+
+	date "+%a" - [first 3 chars of day]
+
+	date "+%A" - [full day name like MONDAY]
+
+	date "+%b" - [3 chars of month - Dec]
+
+	date "+%B" - [full month name - December]
+
+	date "+%H" - [current hour in 24 format]
+
+	date "+%I" - [current hour in 12 format]
+	
+	date "+%M" - minutes
+	date "+%S" - seconds
+
+	date "+%I:%M:%S" pirnts current time in HH:MM:SS
+
+	date "+todays date and time is : %d-%m-%Y %I:%M:%S"
+
+
+
