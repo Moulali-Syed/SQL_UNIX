@@ -1,0 +1,85 @@
+Unix/Linux commands:
+==============
+|file commands|
+=============
+1.create a file 
+	cat command can be used to create a new file , display content of file , concatenate multiple files , update a file
+	cat >testing.txt
+	manual automation testing add content to file
+
+	display content of file
+	cat testing.txt
+
+	cat >testing123.txt[created a new file]
+	
+	to see content of both files
+	cat testing.txt testing123.txt
+
+	update file data, append data to file
+	cat >>testing.txt
+	add content now like regression, smoke testing
+======================================
+2.cp
+	copy content of one file to other file
+	 cp testing.txt testing_new.txt
+	content in testing.txt will be copied to testing_new.txt also
+	cp srFile targetFile
+=======================================
+3.mv
+	rename file, directory , move files from one dir to other directory
+	
+	rename file
+	mv testing.txt automation.txt
+
+	rename directory
+	mkdir mydir//creating dir
+	mv mydir yourdir
+
+	moving files from one dir to other dir
+	pwd shows present working directory
+	mv automation.txt yourdir
+=======================================
+
+4.rm
+	remove file
+	rm testing123.txt
+	
+	remove directory
+	rm yourdir[deletes empty directory only]
+	rm -r yourdir[deletes dir even if it has any files]
+=======================================	
+ls   ---> list the files
+clear - clear screen
+
+===================
+|Directory commands|
+===================
+
+1.mkdir 
+	 create dir or subdir
+	 mkdir testdir
+
+	creating multiple directories
+	mkdir testdir1 testdir2 testdir3
+
+	creating sub directiories
+	mkdir -p world/countries/states
+
+2.cd
+	change directory
+	pwd - gives present dir
+	cd dirName
+
+	cd .. [goes to parent directory , one level home]
+	
+	goto home dir
+	cd ~
+
+3.rmdir
+	rmdir dirName [remove empty dir]
+
+	rm -r dirName[removes dir if it is noe empty also]
+
+	remove multiple dirs
+	rmdir testdir1 testdir2 testdir3
+
