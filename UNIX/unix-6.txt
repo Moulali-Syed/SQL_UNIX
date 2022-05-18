@@ -1,0 +1,61 @@
+File Compare Commands:
+
+cat file1
+A
+B
+C
+D
+
+cat file2
+A
+B
+M
+N
+
+1.cmp
+	cmp file1 file2 [file1 file2 differ:byte 5, line 3]
+
+2.diff - compare files and display mismatch between files
+
+	diff file1 file2 
+		3,4c3,4
+		<C
+		<D
+		---
+		>M
+		>N
+	c - change
+	d - delete
+	a - add
+
+	diff file1 file2
+	3,4d2
+	<C
+	<D
+
+	
+	cat file1
+	A
+	B
+	cat file2
+	A
+	B
+	C
+	
+	diff file1 file2
+	2a3
+	>C
+
+3.comm
+
+	used to compare 2 sorted files
+	it provides output in 3 columns
+	in first column display unique lines of first line
+	in second column displays unique line of second line
+	in third column displays common lines in 2 files
+
+
+
+
+
+
