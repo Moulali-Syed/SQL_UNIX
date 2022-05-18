@@ -47,3 +47,4 @@ Regular expressions:
 	ls
 
 20 move all files starts with alphabet and with .txt extension to dir2 directory
+	mv [[:alpha:]]*.txt
