@@ -1,0 +1,8 @@
+JDBC:
+
+we must have below 3 installed on our machine:
+check java (JDK) is installed
+Eclispe
+Mysql JDBC driver
+search download mysql jdbc driver for windows
+https://dev.mysql.com/downloads/connector/j/ click on go to download page
