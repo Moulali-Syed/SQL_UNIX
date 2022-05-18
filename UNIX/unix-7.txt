@@ -1,0 +1,67 @@
+Input, Output , Error Redirection:
+
+
+default Input device is keyboard or command line arguments
+default output device is terminal
+standard error device - terminal
+
+
+when ever we get error it will display in terminal but i want to redirect the output in some other file
+we can use redirection
+
+output redirection:  use > or >>   1
+error redirection : > or  >>	     2
+input redirection: <		     0
+
+output redirection:
+==================
+symbol used > or >>
+error device representing : 1 [is optional]
+
+req1:on giving input, i want the output to get redirected to a file output.txt(output redirection)
+
+	cat 1> output.txt
+provide input to file 
+	cat output.txt
+
+	to append and redirect
+	cat 1>>output.txt
+now add data and it will get updated in that output.txt file
+
+error redirection:
+==================
+symbol used > >>
+error device representing : 2[is must]
+
+cal 15 2021 2>error.txt
+
+update error file[append existing file]
+cal 21 2902 2>>error.txt
+
+
+input redirection:
+==================
+input can be coming from a file 
+
+symbol : <
+number representing : 0[is optional]
+
+read input from a file
+cat 0<input.txt
+
+
+input and output redirection
+cat 0<input.txt 1>output.txt
+
+a and 1 are optional
+	
+	
+
+redirecting output from one terminal to other terminal
+
+cat input.txt > /dev/pts/1[giving path from 2nd terminal ]
+
+echo "hello" > location[/dev/pts/1]
+
+
+tty - gives file name of terminal , by using this we are transferring from one terminal to other termina
