@@ -1,0 +1,79 @@
+chmod:
+provides permissions to file
+
+roles and permissions 
+3 types of roles
+owners/users - u
+groups -g
+others -o
+
+3 types of permissions
+read - r
+write -w
+execute -x
+
+
+when we see ls -l
+we can see some lines are with -rwx -r- r--  
+here -rwx represents owner , -r- represents groups , r-- represents others  permissions
+
+
+lets consider  a project : XYZ
+
+has 3 modules
+module1       module2		module3
+A,B,C		  D,E,F		G,H,I,J
+
+say A created a file sample.txt
+
+A  -- user/owner [person created file]
+B,C -- group     [persons working in the same module]
+
+D,E,F,G,H,I,J - others [persons working in other modules]
+
+
+chmod can be used in 2 ways:
+1.Symbolic/Text Method
+2.Numeric Method
+
+
+SYmbolic/Text Method:
+1.write a command to add execute permission to owner of file
+	chmod u+x sample.txt
+2.write a command to add execute permission to owner and add read,write permissions to group and others
+	chmod u+x,g+rw,o+rw sample.txt
+	chmod u+x,go+rw sample.txt
+3.write a command remove read permissions from group and others
+	chmod g-r,o-r sample.txt
+	chmod go-r sample.txt
+4.chmod u-w,g-w,o-r sample.txt
+	write permission cancelled from owner , write permission cancelled from groups , read permission cancelled from others
+
+
+Numeric method:
+3 types of permissions
+read - r     4
+write -w     2
+execute -x   1
+
+1.chmod 000 sample.txt
+	no permissions to owners,groups,others
+
+2.chmod 777 sample.txt
+	all permissions given to owners,groups,others
+
+3.chmod 444 sample.txt
+	read permissions to all
+
+4.chmod 600 sample.txt
+	read,write permission to owners , no permission to groups ,others
+
+5.chmod 664 sample.txt
+	read,write for owners,groups and read permission to others
+6.chmod 111 sample.txt
+	execute permission to all
+
+
+
+ 
+
