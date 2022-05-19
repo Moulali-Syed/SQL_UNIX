@@ -1,0 +1,79 @@
+git branching:
+by default all files goto master branch
+
+all source code wil be master branch
+
+but why we need master branch
+if suppose some other dev want to work with main branch , he can create the branch and then merge it to main branch
+
+by using git branch parallel developement can happen
+
+by this we can have clean code , after completing feature we can merge with main branch
+
+all branches are independent isolated , all commits in each branch will not be part of other branch 
+
+
+
+create a folder and do 
+git init
+
+create a file a.txt
+
+git add a.txt
+git commit -m "a.txt"
+
+1.To view all available branches
+		git branch
+* master
+* star represents current working branch
+
+we can also see the current branch from
+		git status
+
+2.create a new branch
+	git branch branchName
+
+	git branch br1
+	now check all branches using
+	git branch
+	we will get
+	br1
+	*master [* - active working branch]
+
+3.switch branch from one branch to another branch
+	git checkout ==> discard unstaged changes in working directory
+
+	git checkout branch_name
+	git checkout b1
+	we will see switched to br1
+
+	now see git branch
+	*br1[now br1 is active]
+	master
+
+4.create a new branch and switch single time
+	git checkout -b branchName  [creates new branch and switches also]
+
+
+files available in the master branch will be present in the new branches created[the same files will be available that were present in master at time of the new branch creation]
+
+now lets add some new files into master branch after creating the br1 and br2 branches
+	add b.txt , c.txt commit to master branch
+
+	now switch to br1 there we have only 1 file a.txt , but no further commits were done
+
+	now lets create some files and commit to br1
+	create x.txt and y.txt , add them to stage and commit to br1 
+	now we can see br1 has 3 files
+
+	as all branches are independent, lets go to master branch
+	git checkout master
+	it will just have a.txt , b.txt , c.txt only , it will not know about x.txt,y.txt
+
+THUS CHNAGES in one branch will not be known to other branch
+
+
+
+
+
+	
