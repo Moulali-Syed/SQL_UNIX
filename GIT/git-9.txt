@@ -1,0 +1,104 @@
+Resolve Merge Conflicts:
+
+
+lets create a folder with file Test.txt with content line1
+
+Then we commit to master branch , then again add 1 line - line2 and commit
+
+now create a feature branch , then in the same file add a new line - line3
+
+then switch to master branch add a new line - lineAdd
+
+
+create a folder
+git init
+vim test.txt
+this is firstline
+:wq
+
+cat test.txt
+this is firstline
+
+git add test.txt; git commit -m "MC1"
+
+vim test.txt
+this is firstline
+this is secondline
+
+git add test.txt;git commit -m "MC2"
+
+git log --online
+2 commits will be shown
+
+git branch feature
+git checkout feature
+git log --oneline
+2 commits will be shown
+
+vim test.txt
+this is firstline
+this is secondline
+this is a newline from feature branch
+
+git add test.txt
+git commit -m "FC1"
+git log --oneline
+3 commits in feature branch
+
+git checkout master
+cat text.txt
+this is firstline
+this is secondline
+
+vim test.txt
+this is firstline
+this is secondline
+this is thirdline
+
+git add test.txt
+git commit -m "MC3"
+git log --oneline
+3 commmits in master branch
+
+same file modified in both branches
+
+now lets merge both branches
+
+git merge feature
+Auto-merging test.txt
+CONFLICT : merge conflict in test.txt
+Automatic merge failed: fix conflicts and then commit the result
+thus merge is not successful
+
+now we have to resolve merge conflicts
+cat test.txt
+
+it will show conflict lines
+
+this is firstline
+this is secondline
+<<<<<<<< HEAD
+this is thirdline
+========
+this is a newline from feature branch
+>>>>>>>feature
+
+now open file
+vim test.txt
+i want to have both lines
+<<<<<<<< HEAD
+>>>>>>>feature
+remove these lines
+
+git add test.txt; git commit -m "MC"
+
+git log --oneline
+
+git log --oneline --graph [gives a graph of commits]
+
+
+
+To remove feature branch:
+git branch -d feature
+
+
