@@ -1,0 +1,28 @@
+ps and kill commands:
+
+what is process?
+it is an instance of running program
+ps command used to see what are process running
+kill will kill specific process
+
+we have foreground and background processes
+
+pwd - is a foreground process
+pwd & - is background process we will get process id , press enter it will continue
+
+
+display all current processes
+ps
+
+
+pid represents process id , ppid represents parent process id
+
+
+ps -f[]
+ps -e []
+
+ps -H
+ps -f -H [child under parent process]
+
+ps processId like ps 2033
+
