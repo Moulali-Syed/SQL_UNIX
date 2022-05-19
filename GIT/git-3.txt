@@ -1,0 +1,161 @@
+git diff
+_______________
+
+in real time we have working dir--> staging --> local repo --> remote repo
+
+to compare in version control system we use diff
+
+
+working directory
+lets create a repo[folder]--> create a file [index.txt] with file content as animals
+currently we dont have version control for this folder,lets create that
+
+now do
+git init
+this creates a empty git repo
+
+now lets stage ours file local repo
+git add . 
+
+now index.txt will be present in staging area
+now if we look at git status
+we can see file added to staging area
+
+after commiting to local repo
+lets open the file index.txt and make some chnages , like add birds in file
+these are not part of staging directory
+
+now if we see git status 
+we can see unstaged file
+==========================================================================================================================================================================================
+
+Requirement1:
+see difference between file content in working dir and staging area
+git diff index.txt
+
+
+we will get as below
+diff --git a/index.txt b/index.txt
+index fcb5845..b5bf6bc 100644
+--- a/index.txt
++++ b/index.txt
+@@ -1 +1,2 @@
+ animals
++birds 
+
+
+
+a/index.txt is source represents - staging area
+b/index.txt is destination - working dir
+
+fcb5845 - represents hash file content from source/staging
+b5bf6bc - represents hash file content from workspace/destination
+
+100644 - represents git file mode 
+	   100 - represents type of file
+	   644 - file permissions  rw-r-r
+		4-r
+		2-w
+		1-e
+--- a/index.txt   source file missing some lines(staging)
++++ b/index.txt   new lines added in destination file(working dir)
+
+-1 +1,2    --->  -1 is =in staging area one line is missing  +1,2 is = in working dir we have 1 line and also 2nd line
+
+
+if anyline prefixed with space means it is unchanged
+if anyline prefixed with + means it is added in destination copy
+if anyline prefixed with - means it is removed from destination copy
+
+
+==========================================================================================================================================================================================
+Requirement2:
+commit file 
+git commit -m "comment" - this moves our file to local repo
+this file also has only one line of content [index.txt with content animals]
+
+now lets compare working dir and local repo
+lets add one more line to working dir , as fishes
+
+last commit is always referred as HEAD
+
+git diff HEAD index.txt
+this will find difference between working directory and local repository
+
+we will get as below
+diff --git a/index.txt b/index.txt
+index fcb5845..b5bf6bc 100644
+--- a/index.txt
++++ b/index.txt
+@@ -1 +1,3 @@
+ animals
++birds 
++fishes
+
+birds and fishes are 2 additional lines that are present in working dir and local repo
+==========================================================================================================================================================================================
+
+Requirement3:
+difference between staged copy and local repository
+
+first lets add working dir content to staging area
+git add .
+now the working dir and staging has same file content
+
+git diff --staged HEAD index.txt[mostly used]
+
+we can also use git diff --cached HEAD index.txt
+if we dont specify filename it will check all files
+
+we will get 
+diff --git a/index.txt b/index.txt
+index fcb5845..b5bf6bc 100644
+--- a/index.txt
++++ b/index.txt
+@@ -1 +1,3 @@
+ animals
++birds 
++fishes
+
+we can see the difference between files
+==========================================================================================================================================================================================
+
+Requirement 4:
+To see difference between specific commit and current working directory
+
+lets commit all 3 lines to index.txt
+lets add one more line into the working dir file trees
+
+now 4 lines in working repo , 3lines in local repo
+lets compare specific commit with working dir , to do so we must need the ids of commit
+we can get that from
+git log --oneline
+this gives commit id
+
+git diff d0ff270 index.txt   ---> this compares working dir and local repo
+[git diff commitId fileName]
+
+
+==========================================================================================================================================================================================
+requirement 5: find difference between specific commit and staging area copy
+git diff --staged d0ff720
+
+[git diff --staged commitId]
+
+==========================================================================================================================================================================================
+requirement 6: see difference in file content between 2 specific commits
+
+git diff bb859a8 d0ff720 index.txt
+[git diff commitId commitid fileName]
+
+		
+==========================================================================================================================================================================================
+
+requirement 7: difference between 2 branches
+
+git diff master test [shows all difference between master branch and test branch]
+
+==========================================================================================================================================================================================
+requirement 8: to see difference between local and remote repo
+
+	git diff master repoURL/master
