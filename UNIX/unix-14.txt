@@ -1,0 +1,60 @@
+vi editor [gedit test == mostly not available]
+
+vi fileName
+to write press i
+to close save and exit press esc , :wq!
+
+
+
+putty and winscp tools:
+
+we need ip address , in windows we can get ipaddress using  -->ipconfig
+in linux machines we can get use=ing ifconfig
+
+and username , password is also required to connect to a remote vm
+
+in putty :
+give hostName[ip address] , default port 22
+we can save session , click open
+
+right click chnage settings --> apperance --> change font size
+
+provide userid and password
+
+
+create a file : vi sample.txt , when vi editor is opened it will be in command mode[to switch to command mode press ESC]
+step1: press i [switxh to insert mode]
+step2 : write content
+step3:
+
+	:w save file but keep it open
+	:q quit without  saving
+	:wq save file and quit
+
+
+after creating file , vi sample.txt
+add the full permission chmod 777 sample.txt
+press i , enter content
+then esc
+then :wq!  or :wq
+
+
+to move left , press h
+to move rigth , press l
+to move down , press j
+to move up , press k
+
+dd - delete line
+
+yy - copy the line
+p - paste
+
+
+
+copy files from local desktop to some other linux/any machine - use WinSCP
+
+
+
+
+
+
