@@ -1,0 +1,98 @@
+master branch will have the main code
+if any bug fix is there we create a feature branch , fix and combine that code with master branch
+
+
+merging can be done in 2 ways
+1.fast forward merge:
+we only make changes in child branches but not in master branch and then we merge code , thus no issue of getting merge conflicts
+
+2.Three way merge:
+
+	master branch we have commits and also we have commits in feature branch
+	mostly merge conflicts occur here
+
+
+fast forward merge:
+master --> a.txt , b.txt
+git add a.txt;git commit -m "C1M"
+git add b.txt;git commit -m "C2M"
+git log --oneline
+
+feature branch 
+git branch feature
+
+git branch
+feature
+*master
+
+git checkout feature
+git feature
+*feature
+master
+
+touch x.txt y.txt
+git add x.txt ; git commit -m "C1F"
+git add y.txt ; git commit -m "C2F"
+
+ls 
+we have 4 files
+a.txt b.txt x.txt y.txt
+
+Now lets merge feature branch , with master branch
+_________________________________________________
+1st switch to master
+git checkout master
+git merge feature  [git merge branchName]
+
+thus no conflicts
+
+____________________________________________________________________________________________________________________________________________________________________________________________________
+
+Three way merge:
+master branch new files will be added , feature branch files will be added , at last we merge , merge conflict may arise
+
+
+create  a folder
+git init
+touch a.txt b.txt
+git add a.txt ; git commit -m "C1M"
+git add b.txt ; git commit -m "C2M"
+
+git log --oneline
+we can see 2 commits
+master - 2 files 2 commits were done
+
+create a child branch
+git branch feature
+git checkout feature
+touch x.txt y.txt
+git add x.txt;git commit -m "C1F"
+git add y.txt;git commit -m "C2F"
+in feature branch we have 4 files and 4 commits
+
+
+now switch to master branch
+git checkout branch
+git log --oneline
+only 2 committed files we have
+
+touch c.txt
+git add c.txt
+git commit -m "C3M"
+
+
+now we have 3 files in master
+4 in feature branch
+now lets merge both
+
+git merge feature[git merge branchName]
+as this is a three way merge it will open a editor
+do
+:wq
+three way merge is nothing but recursive strategy
+a new commit will be displayed that will be done by git
+we can see using
+git log --online
+
+
+
