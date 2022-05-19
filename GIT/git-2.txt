@@ -1,0 +1,54 @@
+install git
+download git , download software , install git
+
+once installed search git 
+
+open git bash 
+all linux commands work here
+
+create a project folder  and in gitbash go to that location
+create file in a.txt , b.txt in folder
+
+in gitbash write ls - it shows files
+now we have to create a local repo , to move code from our workspace to local repo
+
+1.write --> git init
+this initialize git repository , creates a .git file [a hidden file, like empty repo]
+
+2.git status
+shows the files , and info about tracked , untracked
+
+3.add to staging area
+ git add a.txt b.txt
+	or
+ git add .
+
+4.then check -->  git status
+	thus we can see they are staged , tracked
+
+for first time we must do below
+5.git config --global user.email "abc@gmail.com"
+  git config --global user.name "Name"
+
+6.to move files to local repo
+	git commit -m "this is a first commit to new repo"
+  this moves files to local repo
+
+7. on checking git status 
+	we can see on branch master , nothing to commit , working tree  clean
+
+8.git log
+	this command shows how many commits were done , time of commit , commit code , who commited person mailId
+
+
+if we add text in a.txt --> if we check git status then it will show unstaged files
+Then we have to do
+git add a.txt
+git commit -m "comment"
+
+or
+
+git commit -a -m "comment"
+
+
+
