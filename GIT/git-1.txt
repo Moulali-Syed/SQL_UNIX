@@ -1,0 +1,37 @@
+version control system:
+multiple developers working on different features , at the end all code should be merged , so we need version control systems
+
+we must maintain the tracking of all the code
+
+git is vcs that helps in tracking, sharing code
+
+we have 2 types of vcs
+1.centralized , difficult to maintain
+2.distributed version control - git
+	we have multiple developers , every dev will write code and have their individual repos , we will commit checkout , then get code from remote repo push ,pull
+	no point of single point of failure
+
+
+
+git architecture and workflow?
+git has 4 main components
+
+working directory - actual workspace[we have untracked files here]
+staging/Index     - [virtual layer , tracked files]
+gitLocalRepository- [committed file]
+githubRemoteRepository - [remote files]
+
+working directory , staging , git local repository - all happens in our system only
+
+
+To stage-->   git add .
+To commit --> git commit -m "commmitMessage"
+to movetoRemoteRepo   --> git push 
+if some code is available in github repo and not in our local machine , we use git pull
+if i want all code in remote repo to my local machine   , also i dont have any repo previously of it then use - git clone
+
+
+along with this we have branching , merging , resolving
+
+
+
