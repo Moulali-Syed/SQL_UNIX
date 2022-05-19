@@ -1,0 +1,44 @@
+Github:
+
+github is a hosting service for git repositories
+git is tool, while github is service to use git
+
+
+
+working dir--git add . --> staging -- git commit -m "" ---> local repo --- git push --->githubRepo
+
+ local repo <--- git pull ---githubRepo
+
+ local repo <--- git clone ---githubRepo
+
+
+new chnages to our local repo then do git pull
+push code to remote repo then do git push
+create a repo from code in github then use git clone
+
+
+
+to clone:
+create a empty folder
+now right click inside folder and open gitbash here
+then 
+git clone 'urlHere'
+git clone 'https://github.com/'
+
+
+
+Now i will work on this 
+now open some file or create a file and add some content
+git add .[all changes will added to staging]
+git commit -m "updatedFile"
+git push origin main
+
+now go back to github repo and refresh u can see ur added files
+
+
+Already we have repo
+some changes are there in the github repo and i want those changes in my local repo, we have to pull the changes
+
+git pull origin main
+
+
