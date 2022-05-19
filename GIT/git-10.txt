@@ -1,0 +1,48 @@
+git rebase - alternative to merge
+
+whenever we do a three way merge , a new commit will be commited by using merge
+
+in rebase we dont have the new commit whenever we merge
+rebase has 2 commands
+
+git rebase master
+git merge feature
+
+no conflicts will be generated
+
+very difficult to find from which commit , what we have done
+
+
+-->rebase can be used with local repository only , must not be used for remote repository , history is not maintained
+
+-->use merge on remote repo, history will be maintained
+
+
+create a folder
+git init
+touch a.txt b.txt
+git add a.txt ; git commit -m "c1m"
+
+git add b.txt; git commit -m "c2m"
+
+git log --oneline
+git branch feature
+git checkout feature
+
+touch x.txt y.txt
+git add x.txt; git commit -m "c1f"
+git add y.txt ;git commmit -m "c2f"
+
+git log --oneline
+
+git checkout master
+touch c.txt
+git add c.txt;git commit -m "c3m"
+git log --oneline
+git log --oneline master
+git log --oneline feature
+
+
+git checkout feature
+git rebase master
+git merge feature
