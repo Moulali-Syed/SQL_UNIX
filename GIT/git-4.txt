@@ -1,0 +1,29 @@
+Removing files by using git rm command:
+
+
+lets create a folder with 3 files as file1,file2,file3
+
+add them to staging
+git init [create empty git repo]
+git add .[staged]
+git commit -m "3 files commited"[commited to local repo]
+
+ls
+shows files in current directory
+
+git ls-files
+shows files in the staging area
+
+1.to remove files from both staging and working directory
+	git rm file1.txt
+	file1 will be removed from working and staging area
+
+2.remove all files from staging and working dir
+	git rm -r .
+
+3.remove files from only staging but not from working directory
+ 	git rm --cached file2.txt
+	now u can check git ls-files , it will be removed
+
+4.remove files only from working dir
+	rm file3.txt
