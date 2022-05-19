@@ -1,0 +1,92 @@
+grep - global regular expression pattern
+This is used for searching a required pattern in a file
+
+grep "Chennai" cities
+gives number of lines the content is matching
+
+
+1.grep "chennai" cities  [chennai here is pattern we want to match]
+
+2.grep command options
+
+	-i   -->  grep -i "delhi" cities    [ignores case senstivity]
+	-n   -->  grep -n "DELHI" cities 	[gives line number and search pattern ]
+	-c   -->  grep -c "delhi" cities 	[gives count , number of times it is matching]
+	-v   -->  grep -v "delhi" cities	[displays lines other than matching pattern]
+	-l   --> grep -l "delhi" cities cities1	[display fileNames that contain delhi in it ]
+
+3.display lines that start with 'D'
+	^ = represents starting of line
+	grep '^D' cities 
+
+4.display lines end with 'i'
+	$ = represents end of line
+	grep 'i$' cities
+
+5.display all lines that end with 'bad'
+	grep 'bad$' cities
+
+6.display all lines that contain any of letters A,B,C,D
+	grep '[A-D]' cities
+	grep '[ABCD]' cities
+
+7.display all lines that contain any of letters A,B,C,D....Z
+	grep '[A-Z]' cities
+
+8.search vowels in file a,e,i,o,u
+	grep '[aeiou]' cities
+
+9.search consonants in file 
+	grep '[^aeiou]' cities
+
+10.search for multiple patterns
+	-e = search for multiple patterns
+	grep -e "delhi" -e "Chennai" cities
+
+	instead of -e we can use egrep[extended grep]
+	egrep "(delhi|Chennai)" cities
+
+
+difference between egrep and grep
+	egrep "(delhi|Chennai)" cities  --> egrep considers this as regular expression or pattern
+	egrep "(delhi|Chennai)" cities   --> grep command will think the "(delhi|Chennai)" whole as a single search pattern
+
+	egrep understands all patterns
+	grep '^D' cities 
+	egrep '^D' cities ,  both understand it same
+
+-F = search for fixed strings(No pattern) , helps to search multiple patterns
+	grep -F "Delhi
+		Mumbai
+		Hyderabad" cities
+	
+	press enter after every pattern
+
+Instead of F we can use fgrep command (Fixed String Global Regular Expression pattern)
+fgrep "Delhi
+	Mumbai
+	Hyderabad" cities
+fgrep cannot understand pattern only understand strings
+
+====================================================================================================================================
+grep with piping:
+
+1.cat cities | grep "Delhi"
+displays the lines that has Delhi
+
+2.filenames start with emp
+ls -l | grep '^emp'
+
+3.find files that cities in their fileName
+ls -l|grep 'cities'
+
+4.find files that cities in their fileName and then display number of filenames matching
+ls -l | grep 'cities' | wc -l
+
+5.ls cities | xargs wc
+
+
+
+
+	
+
