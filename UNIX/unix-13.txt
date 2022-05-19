@@ -1,0 +1,35 @@
+zip files/extract files:
+
+=========================
+tar command
+
+compress/zipping files
+
+.tar file of linux is equivalent of .zip file in windows
+
+mydir.tar
+mydir.tar.gz[gun zip]
+mydir.tar.bz2[gun zip]
+
+
+zip a directory
+c- creates a new .tar archive file
+v - verbosly show the .tar file progress
+f - file name type of archive file
+
+
+tar -cvf mydir.tar mydir
+
+tar -cvf mydir.tar.gz mydir
+
+tar -cvf mydir.tar.bz2 mydir
+
+
+=========================
+
+extract/unzipping files:
+ x- represents extract
+
+tar -xvf mydir.tar
+tar -xvf mydir.tar.gz
+tar -xvf mydir.tar.bz2
