@@ -1,0 +1,118 @@
+git reset command:
+==================
+1.to remove changes from staging area
+2.to undo commits at repository level
+
+
+working dir  ----git add file.txt------>       staging area
+working dir  <----git reset file.txt------>       staging area
+
+
+create a empty folder 
+
+do git init
+now create a file index.txt
+and add content line1 line2 line3
+
+lets add to staging area
+git add index.txt
+
+now we can see
+ls
+it shows files in current folder
+git ls-files 
+shows files in staging area
+
+git status
+we can see file is ready for commit
+
+git reset index.txt
+this will remove file from staging area , we can check it
+
+ls 
+it will show file index.txt
+git ls-files
+it will show empty , because we reset the file
+==================================================================================================================================================================
+
+to undo commits at repository level
+
+staging area ----git commit-----> local repo
+
+whenever working with commit we need commit id
+
+git reset <mode> <commitId>
+
+mode will decide whether these changes are going to remove from staging area and working directory or not
+we have 3 mostly used mode
+--mixed
+--soft
+--hard
+
+create a folder 
+git init
+creates a empty git repo
+create a file1.txt add content animals
+create a file2.txt add content fishes
+create a file3.txt add content birds
+
+ls
+shows 3 files
+
+add to staging area
+git add file1.txt
+git commit -m "commmitted file1"
+
+git add file2.txt;git commit -m "committed file2"
+git add file3.txt;git commit -m "committed file3"
+
+ls
+shows 3 files
+git ls-files
+shows files in staging area
+
+git log --oneline
+shows number of commits done to repo
+we have commit ids , the last committed file is HEAD
+
+
+
+1.reset with --mixed Mode:
+	it is the default mode
+	to discard commits in local repository and to discard changes in staging area we should use reset with --mixed option
+	it will not touch working directory
+
+requirement1:
+discard the last commit
+	git reset --mixed acb9d2c
+	commit id we specified , all the commits that were done after the specified commit id will be removed
+
+now check 
+ls 
+all 3 files are there
+git ls-files
+only  2 files will be there
+
+git log --oneline
+only 2 commits will be there
+
+2.reset with --soft option:
+	it is exactly same as --mixed option , but changes are available in working directory as well as staging area
+	it wont touch staging area and working directory
+	as changes already present in staging area , just we have to use commit to revert back
+
+lets have all 3 files in staging and local git repo
+
+	git reset --soft acb9d2c
+
+now only 2 commits we be there  check using git log --oneline
+but 3 files in staging and working repo
+
+3.reset with --hard option:
+	this removes all files from staging, working dir, local git repo
+	very carefully execute this command
+
+	git reset --hard commitId
+	all commits after the provided commitId will be removed permanently
+
+==================================================================================================================================================================
