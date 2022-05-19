@@ -1,0 +1,64 @@
+how to work with eclispe and intellij with git:
+
+create a github repo and copy the remote repo url
+create a new file in it
+
+
+Now clone the github repo to eclipse
+1.right click in project explorer pane - click on import
+2.select Git - projects from GIT -Next
+3.Select Clone URI
+4.provide remote repo url
+5.next
+6.next
+7.import as general project
+8.next
+9.finish
+
+
+now u can do modifications or add some code
+it is not part of local repo
+we  have to stage - commit - push to remote repo
+
+Right click on file -->Team -->Add to Index
+Rightclick on file --> Team --> Commit
+it will open a window as unstaged changes | staged changes | Commit message[give commit message]
+Then select commit and push if u want to push code to remote repo
+or select commit to only push code to local repo
+Now it will ask for username and password and login
+
+we will get window as pushed to repo - origin
+
+now open and check the github repo and we can see the code changes there
+
+
+now if we have made any changes or some one done changes we want them in our local repo
+Then we have to do pull
+Right click on project --> team --> Pull
+
+Refresh
+========================================================================================================================================================================
+
+IntelliJ IDE
+
+launch IDE
+click on get from VCS
+select github --> pass remote repo url
+			and in the specified location project will be cloned
+
+
+modify the files and save the file
+right click on file --> git --> add --> file added to staging
+right click on file --> git --> commit
+provide some message
+go to git--> click on push
+
+provide the credentials to github account
+
+
+now add some lines of code in github file
+now pull that code
+click on GIT -> Pull -> select the branch
+
+
+
