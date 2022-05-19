@@ -1,0 +1,31 @@
+git checkout command
+ we can use checkout command to discard unstaged chnages in tracked files of working directory
+
+
+1.only for working directory
+2.to discard unstaged changes(The changes which are not added to staging area)
+3.in the tracked files(files which are already added to staging area/commit)
+
+checkout is used as undo command
+
+lets create a folder , create a new file file.txt with content 
+first line 
+second line
+
+lets create git repo - git init
+git add .
+now file is staged
+now commit git commit -m "firstcommit"
+now file.txt is a tracked file
+
+now lets open file file1.txt
+and add content 
+this is third line
+this is fourth line
+
+now these two lines are not part of staged changes, these are unstaged and now i want to discard these additional 2 lines
+ git checkout -- file1.txt
+
+now the 2 lines will be discarded
+
+checkout command is applicable only for tracked files , but not untracked files
